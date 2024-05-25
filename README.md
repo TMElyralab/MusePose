@@ -18,9 +18,9 @@ Here, we introduce the first version of MusePose, `MusePose-v1`. We really thank
 # Overview
 `MusePose-v1` is a diffusion-based virtual human video generation framework, which
 
-1. generates video of the charactor in a `reference_image` under the pose given by a `reference_pose_video`
-1. `pose aligment` code whichs modifyes the pose video given the charactor in an image
-1. checkpoint available trained on the UBC fashion video dataset and an internal authorized dataset, with an resotion of `768 x 768` and `48` frames.
+1. generates video of the character in a reference image under the pose given by a reference pose video
+1. `pose aligment` code that **SIGNIFICANTLY** helps to maintain the character in an image. It modifies the pose of an input video given the character in an image.
+1. checkpoint available trained on the UBC fashion video dataset and an internal authorized dataset, with an resotion of `512 x 512` and `48` frames.
 1. training codes.
 
 
@@ -29,23 +29,35 @@ Here, we introduce the first version of MusePose, `MusePose-v1`. We really thank
 
 ## Cases
 <table class="center">
+  <tr style="font-weight: bolder;text-align:center;">
+        <td width="60%">Results</td>
+        <td width="40%">Methods</td>
+  </tr>
   <tr>
     <td >
       <video src=assets/video/video1.mp4 controls preload></video>
+    </td>
+    <td >
+      Pose Align + MusePose
     </td>
   </tr>
   <tr>
     <td >
       <video src=assets/video/video2.mp4 controls preload></video>
     </td>
+    <td >
+      Pose Align + MusePose + FaceFusion
+    </td>
   </tr>
 </table >
+
+
 # TODO:
 - [x] trained models and inference codes of MusePose-v1.
 - [x] pose alignment codes.
 - [x] training codes.
-- [ ] Huggingface Gradio [demo](https://huggingface.co/spaces/TMElyralab/MuseTalk).
-- [ ] a enhanced architecture (may take longer).
+- [ ] Huggingface Gradio demo.
+- [ ] a improved architecture and model (may take longer).
 
 
 # Getting Started
@@ -120,6 +132,10 @@ python -m scripts.inference --inference_config configs/inference/test.yaml
 configs/inference/test.yaml is the path to the inference configuration file, including video_path and audio_path.
 The video_path should be either a video file, an image file or a directory of images.
 
+### Face Enhancement
+
+If you want to enhance the face region to have a better consistency of the face, you could use [FaceFusion](https://github.com/facefusion/facefusion). You can use the `face-swap` function to swap the face in the reference image to the generated video.
+
 ### Training
 
 
@@ -131,7 +147,7 @@ The video_path should be either a video file, an image file or a directory of im
 Thanks for open-sourcing!
 
 # Limitations
-- Identity preservation: Some details of the original charactor (especially face region) are not well preserved.
+- Detail preservation: Some details of the original character are not well preserved (e.g. face region and complex clothing).
 
 
 # Citation
