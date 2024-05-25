@@ -148,8 +148,8 @@ If you want to enhance the face region to have a better consistency of the face,
 Thanks for open-sourcing!
 
 # Limitations
-- Detail preservation: Some details of the original character are not well preserved (e.g. face region and complex clothing).
-
+- Detail consitency: some details of the original character are not well preserved (e.g. face region and complex clothing).
+- Noise and flickering: we observe noise and flicking in complex background. 
 
 # Citation
 ```bib
