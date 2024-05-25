@@ -100,23 +100,24 @@ You can download weights manually as follows:
 2. Download the weights of other components:
    - [sd-vae-ft-mse](https://huggingface.co/stabilityai/sd-vae-ft-mse)
    - [dwpose](https://huggingface.co/yzd-v/DWPose/tree/main)
+   - [image_encoder](https://huggingface.co/lambdalabs/sd-image-variations-diffusers/tree/main/image_encoder)
 
 Finally, these weights should be organized in `models` as follows:
 ```
 ./pretrained_weights/
-|-- denoising_unet.pth
-|-- motion_module.pth
-|-- pose_guider.pth
-|-- reference_unet.pth
+|-- MusePose
+|   └── denoising_unet.pth
+|   └── motion_module.pth
+|   └── pose_guider.pth
+|   └── reference_unet.pth
 |-- dwpose
 |   └── dw-ll_ucoco_384.pth
 |-- image_encoder
 |   |-- config.json
-|   `-- pytorch_model.bin
-`-- sd-vae-ft-mse
+|   |-- pytorch_model.bin
+|-- sd-vae-ft-mse
     |-- config.json
     |-- diffusion_pytorch_model.bin
-    `-- diffusion_pytorch_model.safetensors
 
 ```
 ## Quickstart
