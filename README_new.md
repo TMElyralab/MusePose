@@ -135,7 +135,7 @@ prepare your referemce images and dance videos in the folder ```./asserts``` and
 ```
 
 ### Pose Alignment
-Get the aligned dwpose of the referemce image:
+Get the aligned dwpose of the reference image:
 ```
 python pose_align.py --imgfn_refer ./assets/images/ref.jpg --vidfn ./assets/videos/dance.mp4
 ```
