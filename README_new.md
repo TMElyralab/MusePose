@@ -141,8 +141,7 @@ python pose_align.py --imgfn_refer ./assets/images/ref.jpg --vidfn ./assets/vide
 ```
 After this, you can see the pose align results in ```./assets/poses```, where ```./assets/poses/align/img_ref_video_dance.mp4``` is the aligned dwpose and the ```./assets/poses/align_demo/img_ref_video_dance.mp4``` is for debug.
 
-Finally, add the path of the referemce image and the aligned dwpose to the test config file ```./configs/test_stage_2.yaml``` as the example:
-
+Add the path of the referemce image and the aligned dwpose to the test config file ```./configs/test_stage_2.yaml``` as the example:
 ```
 test_cases:
   "./assets/images/ref.jpg":
