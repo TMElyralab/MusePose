@@ -9,7 +9,6 @@ Bin Wu<sup>†</sup>,
 Wenjiang Zhou
 (<sup>†</sup>Corresponding Author, benbinwu@tencent.com)
 
-
 [MusePose](https://github.com/TMElyralab/MusePose) is an image-to-video generation framework for virtual human under control signal like pose. We believe that generating virtual human performing different actions is crutial in many scenarios. Together with [MuseV](https://github.com/TMElyralab/MuseV) and [MuseTalk](https://github.com/TMElyralab/MuseTalk), we expect that [MusePose](https://github.com/TMElyralab/MusePose) can contribute to our virtual human solution, moving towards more wonderful AIGC in the future.
 
 Here, we present the first version of **MusePose**, `MusePose-v1`. We really thank [AnimateAnyone](https://github.com/HumanAIGC/AnimateAnyone) for their academic paper and [Moore-AnimateAnyone](https://github.com/MooreThreads/Moore-AnimateAnyone) for their code base, which significant expedite the development of the AIGC community and [MusePose](https://github.com/TMElyralab/MusePose).
@@ -23,13 +22,45 @@ Our main contributions could be summarized as follows:
 4. [huggingface](https://huggingface.co/TMElyralab/MusePose) is comming soon.
 
 ## Demos
-https://github.com/TMElyralab/MusePose/assets/47803475/6667c9ae-8417-49a1-bbbb-fe1695404c23
+<table class="center">
+    
+<tr>
+    <td width=50% style="border: none">
+        <video controls autoplay loop src="https://github.com/TMElyralab/MusePose/assets/47803475/457c0a7a-a2c3-426f-9ed8-4953acf98545" muted="false"></video>
+    </td>
+    <td width=50% style="border: none">
+        <video controls autoplay loop src="https://github.com/TMElyralab/MusePose/assets/47803475/6667c9ae-8417-49a1-bbbb-fe1695404c23" muted="false"></video>
+    </td>
+</tr>
 
-https://github.com/TMElyralab/MusePose/assets/47803475/7f7a3aaf-2720-4b50-8bca-3257acce4733
+<tr>
+    <td width=50% style="border: none">
+        <video controls autoplay loop src="https://github.com/TMElyralab/MusePose/assets/47803475/7f7a3aaf-2720-4b50-8bca-3257acce4733" muted="false"></video>
+    </td>
+    <td width=50% style="border: none">
+        <video controls autoplay loop src="https://github.com/TMElyralab/MusePose/assets/47803475/64d14512-a1db-469b-8021-2ae817d2f729" muted="false"></video>
+    </td>
+</tr>
 
-https://github.com/TMElyralab/MusePose/assets/47803475/e467e840-712b-4eab-9ab3-a50ea9ea67de
+<tr>
+    <td width=50% style="border: none">
+        <video controls autoplay loop src="https://github.com/TMElyralab/MusePose/assets/47803475/00a9faec-2453-4834-ad1f-44eb0ec8247d" muted="false"></video>
+    </td>
+    <td width=50% style="border: none">
+        <video controls autoplay loop src="https://github.com/TMElyralab/MusePose/assets/47803475/41ad26b3-d477-4975-bf29-73a3c9ed0380" muted="false"></video>
+    </td>
+</tr>
 
-https://github.com/TMElyralab/MusePose/assets/47803475/00a9faec-2453-4834-ad1f-44eb0ec8247d
+<tr>
+    <td width=50% style="border: none">
+        <video controls autoplay loop src="https://github.com/TMElyralab/MusePose/assets/47803475/2bbebf98-6805-4f1b-b769-537f69cc0e4b" muted="false"></video>
+    </td>
+    <td width=50% style="border: none">
+        <video controls autoplay loop src="https://github.com/TMElyralab/MusePose/assets/47803475/866d54b0-bad3-413b-9982-3518fd6c5de8" muted="false"></video>
+    </td>
+</tr>
+
+</table>
 
 
 ## News
