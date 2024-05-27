@@ -1,12 +1,13 @@
-pretrained_base_model_path: './model_weights/sd-image-variations-diffusers'
-pretrained_vae_path: './model_weights/sd-vae-ft-mse'
-image_encoder_path: './model_weights/image_encoder'
+pretrained_base_model_path: './pretrained_weights/sd-image-variations-diffusers'
+pretrained_vae_path: './pretrained_weights/sd-vae-ft-mse'
+image_encoder_path: './pretrained_weights/image_encoder'
 
 
 
-denoising_unet_path: "./exp_output/stage1/denoising_unet-92400.pth"
-reference_unet_path: "./exp_output/stage1/reference_unet-92400.pth"
-pose_guider_path: "./exp_output/stage1/pose_guider-92400.pth"
+denoising_unet_path: "./pretrained_weights/MusePose/denoising_unet.pth"
+reference_unet_path: "./pretrained_weights/MusePose/reference_unet.pth"
+pose_guider_path: "./pretrained_weights/MusePose/pose_guider.pth"
+
 
 
 
