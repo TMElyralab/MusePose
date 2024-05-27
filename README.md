@@ -38,7 +38,7 @@ Our main contributions could be summarized as follows:
         <video controls autoplay loop src="https://github.com/TMElyralab/MusePose/assets/47803475/7f7a3aaf-2720-4b50-8bca-3257acce4733" muted="false"></video>
     </td>
     <td width=50% style="border: none">
-        <video controls autoplay loop src="https://github.com/TMElyralab/MusePose/assets/47803475/64d14512-a1db-469b-8021-2ae817d2f729" muted="false"></video>
+        <video controls autoplay loop src="https://github.com/TMElyralab/MusePose/assets/47803475/44b31326-8029-4d4f-b46b-0e5b78fa66bf" muted="false"></video>
     </td>
 </tr>
 
