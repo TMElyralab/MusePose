@@ -16,7 +16,7 @@ from einops import rearrange
 from tqdm import tqdm
 from transformers import CLIPImageProcessor
 
-from src.models.mutual_self_attention import ReferenceAttentionControl
+from musepose.models.mutual_self_attention import ReferenceAttentionControl
 
 
 @dataclass

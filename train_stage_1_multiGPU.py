@@ -33,14 +33,13 @@ from PIL import Image
 from tqdm.auto import tqdm
 from transformers import CLIPVisionModelWithProjection
 
-from src.dataset.dance_image import HumanDanceDataset
-from src.dwpose import DWposeDetector
-from src.models.mutual_self_attention import ReferenceAttentionControl
-from src.models.pose_guider import PoseGuider
-from src.models.unet_2d_condition import UNet2DConditionModel
-from src.models.unet_3d import UNet3DConditionModel
-from src.pipelines.pipeline_pose2img import Pose2ImagePipeline
-from src.utils.util import delete_additional_ckpt, import_filename, seed_everything
+from musepose.dataset.dance_image import HumanDanceDataset
+from musepose.models.mutual_self_attention import ReferenceAttentionControl
+from musepose.models.pose_guider import PoseGuider
+from musepose.models.unet_2d_condition import UNet2DConditionModel
+from musepose.models.unet_3d import UNet3DConditionModel
+from musepose.pipelines.pipeline_pose2img import Pose2ImagePipeline
+from musepose.utils.util import delete_additional_ckpt, import_filename, seed_everything
 
 warnings.filterwarnings("ignore")
 

@@ -4,7 +4,7 @@ from typing import Any, Dict, Optional
 import torch
 from einops import rearrange
 
-from src.models.attention import TemporalBasicTransformerBlock
+from musepose.models.attention import TemporalBasicTransformerBlock
 
 from .attention import BasicTransformerBlock
 

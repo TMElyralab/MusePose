@@ -18,11 +18,11 @@ from transformers import CLIPVisionModelWithProjection
 import glob
 import torch.nn.functional as F
 
-from src.models.pose_guider import PoseGuider
-from src.models.unet_2d_condition import UNet2DConditionModel
-from src.models.unet_3d import UNet3DConditionModel
-from src.pipelines.pipeline_pose2vid_long import Pose2VideoPipeline
-from src.utils.util import get_fps, read_frames, save_videos_grid
+from musepose.models.pose_guider import PoseGuider
+from musepose.models.unet_2d_condition import UNet2DConditionModel
+from musepose.models.unet_3d import UNet3DConditionModel
+from musepose.pipelines.pipeline_pose2vid_long import Pose2VideoPipeline
+from musepose.utils.util import get_fps, read_frames, save_videos_grid
 
 
 

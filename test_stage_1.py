@@ -18,12 +18,12 @@ from PIL import Image
 from torchvision import transforms
 from transformers import CLIPVisionModelWithProjection
 
-from configs.prompts.test_cases import TestCasesDict
-from src.models.pose_guider import PoseGuider
-from src.models.unet_2d_condition import UNet2DConditionModel
-from src.models.unet_3d import UNet3DConditionModel
-from src.pipelines.pipeline_pose2img import Pose2ImagePipeline
-from src.utils.util import get_fps, read_frames, save_videos_grid
+
+from musepose.models.pose_guider import PoseGuider
+from musepose.models.unet_2d_condition import UNet2DConditionModel
+from musepose.models.unet_3d import UNet3DConditionModel
+from musepose.pipelines.pipeline_pose2img import Pose2ImagePipeline
+from musepose.utils.util import get_fps, read_frames, save_videos_grid
 
 
 def parse_args():
