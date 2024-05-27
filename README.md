@@ -26,7 +26,7 @@ Our main contributions could be summarized as follows:
     
 <tr>
     <td width=50% style="border: none">
-        <video controls autoplay loop src="https://github.com/TMElyralab/MusePose/assets/47803475/457c0a7a-a2c3-426f-9ed8-4953acf98545" muted="false"></video>
+        <video controls autoplay loop src="https://github.com/TMElyralab/MusePose/assets/47803475/bb52ca3e-8a5c-405a-8575-7ab42abca248" muted="false"></video>
     </td>
     <td width=50% style="border: none">
         <video controls autoplay loop src="https://github.com/TMElyralab/MusePose/assets/47803475/6667c9ae-8417-49a1-bbbb-fe1695404c23" muted="false"></video>
