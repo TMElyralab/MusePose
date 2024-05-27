@@ -68,9 +68,9 @@ Our main contributions could be summarized as follows:
 
 
 ## Todo:
-- [x] release trained models and inference codes of MusePose-v1.
+- [x] release our trained models and codes of MusePose-v1.
 - [x] release pose align algorithm.
-- [ ] training codes.
+- [ ] training guidelines.
 - [ ] Huggingface Gradio demo.
 - [ ] a improved architecture and model (may take longer).
 
