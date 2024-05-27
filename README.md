@@ -83,7 +83,7 @@ mim install "mmdet>=3.1.0"
 mim install "mmpose>=1.1.0" 
 ```
 
-```
+
 ### Download weights
 You can download weights manually as follows:
 
