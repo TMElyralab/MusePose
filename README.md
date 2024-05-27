@@ -11,9 +11,9 @@ Wenjiang Zhou
 
 **[github](https://github.com/TMElyralab/MusePose)**    **[huggingface](https://huggingface.co/TMElyralab/MusePose)**    **space**    **Project (comming soon)**
 
-`MusePose` is an image-to-video generation framework for virtual human under control signal like pose. We believe that generating virtual human performing different actions is crutial in many scenarios. Together with [MuseV](https://github.com/TMElyralab/MuseV) and [MuseTalk](https://github.com/TMElyralab/MuseTalk), we expect that MusePose can contribute to our virtual human solution to, towards the path to more realistic generation.
+`MusePose` is an image-to-video generation framework for virtual human under control signal like pose. We believe that generating virtual human performing different actions is crutial in many scenarios. Together with [MuseV](https://github.com/TMElyralab/MuseV) and [MuseTalk](https://github.com/TMElyralab/MuseTalk), we expect that [MusePose](https://github.com/TMElyralab/MusePose) can contribute to our virtual human solution, moving towards more wonderful AIGC in the future.
 
-Here, we introduce the first version of MusePose, `MusePose-v1`. We really thank [AnimateAnyone](https://github.com/HumanAIGC/AnimateAnyone) for their technical report and [Moore-AnimateAnyone](https://github.com/MooreThreads/Moore-AnimateAnyone) for their code base, which significant expedite the development of the community and MusePose.
+Here, we present the first version of **MusePose**, `MusePose-v1`. We really thank [AnimateAnyone](https://github.com/HumanAIGC/AnimateAnyone) for their academic paper and [Moore-AnimateAnyone](https://github.com/MooreThreads/Moore-AnimateAnyone) for their code base, which significant expedite the development of the community and [MusePose](https://github.com/TMElyralab/MusePose).
 
 # Overview
 `MusePose-v1` is a diffusion-based virtual human video generation framework, which
