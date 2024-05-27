@@ -100,20 +100,18 @@ You can download weights manually as follows:
 2. Download the weights of other components:
    - [sd-vae-ft-mse](https://huggingface.co/stabilityai/sd-vae-ft-mse)
    - [dwpose](https://huggingface.co/yzd-v/DWPose/tree/main)
-   - [yolox](https://download.openmmlab.com/mmdetection/v2.0/yolox/yolox_l_8x8_300e_coco/yolox_l_8x8_300e_coco_20211126_140236-d3bd2b23.pth)
    - [image_encoder](https://huggingface.co/lambdalabs/sd-image-variations-diffusers/tree/main/image_encoder)
 
 Finally, these weights should be organized in `models` as follows:
 ```
 ./pretrained_weights/
 |-- MusePose
-|   |-- denoising_unet.pth
-|   |-- motion_module.pth
-|   |-- pose_guider.pth
-|   |-- reference_unet.pth
+|   └── denoising_unet.pth
+|   └── motion_module.pth
+|   └── pose_guider.pth
+|   └── reference_unet.pth
 |-- dwpose
-|   |-- dw-ll_ucoco_384.pth
-    |-- yolox_l_8x8_300e_coco.pth
+|   └── dw-ll_ucoco_384.pth
 |-- image_encoder
 |   |-- config.json
 |   |-- pytorch_model.bin
@@ -124,38 +122,17 @@ Finally, these weights should be organized in `models` as follows:
 ```
 ## Quickstart
 
-### Prepare 
-prepare your referemce images and dance videos in the folder ```./asserts``` and organnized as the example: 
-```
-./asserts/
-|-- images
-|   |-- ref.jpg
-|-- videos
-|   |-- dance.mp4
-```
-
 ### Pose Alignment
-Get the aligned dwpose of the reference image:
-```
-python pose_align.py --imgfn_refer ./assets/images/ref.jpg --vidfn ./assets/videos/dance.mp4
-```
-After this, you can see the pose align results in ```./assets/poses```, where ```./assets/poses/align/img_ref_video_dance.mp4``` is the aligned dwpose and the ```./assets/poses/align_demo/img_ref_video_dance.mp4``` is for debug.
 
-Add the path of the reference image and the aligned dwpose to the test config file ```./configs/test_stage_2.yaml``` as the example:
-```
-test_cases:
-  "./assets/images/ref.jpg":
-    - "./assets/poses/align/img_ref_video_dance.mp4"
-```
 
 ### Inference
 Here, we provide the inference script. 
 ```
-python test_stage_2.py --config ./configs/test_stage_2.yaml
+python -m scripts.inference --inference_config configs/inference/test.yaml 
 ```
-```./configs/test_stage_2.yaml``` is the path to the inference configuration file.
+configs/inference/test.yaml is the path to the inference configuration file, including video_path and audio_path.
+The video_path should be either a video file, an image file or a directory of images.
 
-Finally, you can see the output results in ```./output/```
 ### Face Enhancement
 
 If you want to enhance the face region to have a better consistency of the face, you could use [FaceFusion](https://github.com/facefusion/facefusion). You can use the `face-swap` function to swap the face in the reference image to the generated video.
