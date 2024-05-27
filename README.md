@@ -20,7 +20,7 @@ Our main contributions could be summariezd as follows:
 1. The released model can generate dance videos of the human character in a reference image under the given pose sequence, and the result quality exceeds almost all current open source models within the same topic.
 2. We released the `pose align` algorithm so that users could align arbitray dance videos as their pose sequence to arbitray reference image, which both **SIGNIFICANTLY** improved inference performance and enhanced model usability.
 3. We fixed several serious bugs and made some improvement based on the code of (https://github.com/MooreThreads/Moore-AnimateAnyone).
-4. **[huggingface](https://huggingface.co/TMElyralab/MusePose)** (is comming soon)
+4. [huggingface](https://huggingface.co/TMElyralab/MusePose) is comming soon.
 
 
 # News
