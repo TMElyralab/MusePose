@@ -14,47 +14,28 @@ Wenjiang Zhou
 
 Here, we present the first version of **MusePose**, `MusePose-v1`. We really thank [AnimateAnyone](https://github.com/HumanAIGC/AnimateAnyone) for their academic paper and [Moore-AnimateAnyone](https://github.com/MooreThreads/Moore-AnimateAnyone) for their code base, which significant expedite the development of the AIGC community and [MusePose](https://github.com/TMElyralab/MusePose).
 
-# Overview
+## Overview
 [MusePose](https://github.com/TMElyralab/MusePose) is a diffusion-based and pose-guided virtual human video generation framework.  
-Our main contributions could be summariezd as follows:
+Our main contributions could be summarized as follows:
 1. The released model can generate dance videos of the human character in a reference image under the given pose sequence, and the result quality exceeds almost all current open source models within the same topic.
 2. We released the `pose align` algorithm so that users could align arbitray dance videos as their pose sequence to arbitray reference image, which both **SIGNIFICANTLY** improved inference performance and enhanced model usability.
 3. We fixed several serious bugs and made some improvement based on the code of (https://github.com/MooreThreads/Moore-AnimateAnyone).
 4. [huggingface](https://huggingface.co/TMElyralab/MusePose) is comming soon.
 
+## Demos
+https://github.com/TMElyralab/MusePose/assets/47803475/6667c9ae-8417-49a1-bbbb-fe1695404c23
+https://github.com/TMElyralab/MusePose/assets/47803475/7f7a3aaf-2720-4b50-8bca-3257acce4733
+https://github.com/TMElyralab/MusePose/assets/47803475/e467e840-712b-4eab-9ab3-a50ea9ea67de
+https://github.com/TMElyralab/MusePose/assets/47803475/00a9faec-2453-4834-ad1f-44eb0ec8247d
 
-# News
+
+## News
 - [05/27/2024] Release `MusePose-v1` and pretrained models.
 
 
-## Cases
-<table class="center">
-  <tr style="font-weight: bolder;text-align:center;">
-        <td width="60%">Results</td>
-        <td width="40%">Methods</td>
-  </tr>
-  <tr>
-    <td >
-      <video src=assets/video/video1.mp4 controls preload></video>
-    </td>
-    <td >
-      Pose Align + MusePose
-    </td>
-  </tr>
-  <tr>
-    <td >
-      <video src=assets/video/video2.mp4 controls preload></video>
-    </td>
-    <td >
-      Pose Align + MusePose + FaceFusion
-    </td>
-  </tr>
-</table >
-
-
-# TODO:
-- [x] trained models and inference codes of MusePose-v1.
-- [x] pose alignment codes.
+## Todo:
+- [x] release trained models and inference codes of MusePose-v1.
+- [x] release pose align algorithm.
 - [ ] training codes.
 - [ ] Huggingface Gradio demo.
 - [ ] a improved architecture and model (may take longer).
