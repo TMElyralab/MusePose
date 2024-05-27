@@ -83,14 +83,6 @@ mim install "mmdet>=3.1.0"
 mim install "mmpose>=1.1.0" 
 ```
 
-### Download ffmpeg-static
-Download the ffmpeg-static and
-```
-export FFMPEG_PATH=/path/to/ffmpeg
-```
-for example:
-```
-export FFMPEG_PATH=/musetalk/ffmpeg-4.4-amd64-static
 ```
 ### Download weights
 You can download weights manually as follows:
