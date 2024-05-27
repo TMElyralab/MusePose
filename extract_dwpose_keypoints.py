@@ -44,8 +44,8 @@ if __name__ == "__main__":
     parser.add_argument("--save_dir",   type=str, default=None)
     parser.add_argument("--yolox_config",  type=str, default="./pose/config/yolox_l_8xb8-300e_coco.py")
     parser.add_argument("--dwpose_config", type=str, default="./pose/config/dwpose-l_384x288.py")
-    parser.add_argument("--yolox_ckpt",  type=str, default="./pose/model/yolox_l_8x8_300e_coco.pth")
-    parser.add_argument("--dwpose_ckpt", type=str, default="./pose/model/dw-ll_ucoco_384.pth")
+    parser.add_argument("--yolox_ckpt",  type=str, default="./pretrained_weights/dwpose/yolox_l_8x8_300e_coco_20211126_140236-d3bd2b23.pth")
+    parser.add_argument("--dwpose_ckpt", type=str, default="./pretrained_weights/dwpose/dw-ll_ucoco_384.pth")
     args = parser.parse_args()
 
     # make save dir 
