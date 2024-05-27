@@ -1,6 +1,6 @@
 # MusePose
 
-MusePose: a Pose-Driven Image-to-Video Framework for Virtual Human Generation
+### MusePose: a Pose-Driven Image-to-Video Framework for Virtual Human Generation ###
 </br>
 Zhengyan Tong,
 Chao Li,
@@ -9,23 +9,23 @@ Bin Wu<sup>†</sup>,
 Wenjiang Zhou
 (<sup>†</sup>Corresponding Author, benbinwu@tencent.com)
 
-**[github](https://github.com/TMElyralab/MusePose)**    **[huggingface](https://huggingface.co/TMElyralab/MusePose)**    **space**    **Project (comming soon)**
 
-`MusePose` is an image-to-video generation framework for virtual human under control signal like pose. We believe that generating virtual human performing different actions is crutial in many scenarios. Together with [MuseV](https://github.com/TMElyralab/MuseV) and [MuseTalk](https://github.com/TMElyralab/MuseTalk), we expect that [MusePose](https://github.com/TMElyralab/MusePose) can contribute to our virtual human solution, moving towards more wonderful AIGC in the future.
+[MusePose](https://github.com/TMElyralab/MusePose) is an image-to-video generation framework for virtual human under control signal like pose. We believe that generating virtual human performing different actions is crutial in many scenarios. Together with [MuseV](https://github.com/TMElyralab/MuseV) and [MuseTalk](https://github.com/TMElyralab/MuseTalk), we expect that [MusePose](https://github.com/TMElyralab/MusePose) can contribute to our virtual human solution, moving towards more wonderful AIGC in the future.
 
-Here, we present the first version of **MusePose**, `MusePose-v1`. We really thank [AnimateAnyone](https://github.com/HumanAIGC/AnimateAnyone) for their academic paper and [Moore-AnimateAnyone](https://github.com/MooreThreads/Moore-AnimateAnyone) for their code base, which significant expedite the development of the community and [MusePose](https://github.com/TMElyralab/MusePose).
+Here, we present the first version of **MusePose**, `MusePose-v1`. We really thank [AnimateAnyone](https://github.com/HumanAIGC/AnimateAnyone) for their academic paper and [Moore-AnimateAnyone](https://github.com/MooreThreads/Moore-AnimateAnyone) for their code base, which significant expedite the development of the AIGC community and [MusePose](https://github.com/TMElyralab/MusePose).
 
 # Overview
-`MusePose-v1` is a diffusion-based virtual human video generation framework, which
-
-1. generates video of the character in a reference image under the pose given by a reference pose video
-1. `pose aligment` code that **SIGNIFICANTLY** helps to maintain the character in an image. It modifies the pose of an input video given the character in an image.
-1. checkpoint available trained on the UBC fashion video dataset and an internal authorized dataset, with an resotion of `512 x 512` and `48` frames.
-1. training codes.
+[MusePose](https://github.com/TMElyralab/MusePose) is a diffusion-based and pose-guided virtual human video generation framework.  
+Our main contributions could be summariezd as follows:
+1. The released model can generate dance videos of the human character in a reference image under the given pose sequence, and the result quality exceeds almost all current open source models within the same topic.
+2. We released the `pose align` algorithm so that users could align arbitray dance videos as their pose sequence to arbitray reference image, which both **SIGNIFICANTLY** improved inference performance and enhanced model usability.
+3. We fixed several serious bugs and made some improvement based on the code of (https://github.com/MooreThreads/Moore-AnimateAnyone).
+4. **[huggingface](https://huggingface.co/TMElyralab/MusePose)** (is comming soon)
 
 
 # News
-- [05/24/2024] Release MusePose project and pretrained models.
+- [05/27/2024] Release `MusePose-v1` and pretrained models.
+
 
 ## Cases
 <table class="center">
@@ -55,7 +55,7 @@ Here, we present the first version of **MusePose**, `MusePose-v1`. We really tha
 # TODO:
 - [x] trained models and inference codes of MusePose-v1.
 - [x] pose alignment codes.
-- [x] training codes.
+- [ ] training codes.
 - [ ] Huggingface Gradio demo.
 - [ ] a improved architecture and model (may take longer).
 
