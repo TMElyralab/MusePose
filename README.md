@@ -24,8 +24,11 @@ Our main contributions could be summarized as follows:
 
 ## Demos
 https://github.com/TMElyralab/MusePose/assets/47803475/6667c9ae-8417-49a1-bbbb-fe1695404c23
+
 https://github.com/TMElyralab/MusePose/assets/47803475/7f7a3aaf-2720-4b50-8bca-3257acce4733
+
 https://github.com/TMElyralab/MusePose/assets/47803475/e467e840-712b-4eab-9ab3-a50ea9ea67de
+
 https://github.com/TMElyralab/MusePose/assets/47803475/00a9faec-2453-4834-ad1f-44eb0ec8247d
 
 
