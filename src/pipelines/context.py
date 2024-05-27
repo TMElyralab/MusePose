@@ -19,7 +19,7 @@ def uniform(
     context_size: Optional[int] = None,
     context_stride: int = 3,
     context_overlap: int = 4,
-    closed_loop: bool = True,
+    closed_loop: bool = False,
 ):
     if num_frames <= context_size:
         yield list(range(num_frames))
