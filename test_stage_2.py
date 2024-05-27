@@ -162,7 +162,14 @@ def main():
             original_width, original_height = pose_image_pil.size
             pose_image_pil = pose_image_pil.resize((width,height))
 
+        # repeart the last segment
+        last_segment_frame_num =  (L - args.S) % (args.S - args.O) 
+        repeart_frame_num = (args.S - args.O - last_segment_frame_num) % (args.S - args.O) 
+        for i in range(repeart_frame_num):
+            pose_list.append(pose_list[-1])
+            pose_tensor_list.append(pose_tensor_list[-1])
 
+        
         ref_image_tensor = pose_transform(ref_image_pil)  # (c, h, w)
         ref_image_tensor = ref_image_tensor.unsqueeze(1).unsqueeze(0)  # (1, c, 1, h, w)
         ref_image_tensor = repeat(ref_image_tensor, "b c f h w -> b c (repeat f) h w", repeat=L)
@@ -176,7 +183,7 @@ def main():
             pose_list,
             width,
             height,
-            L,
+            len(pose_list),
             args.steps,
             args.cfg,
             generator=generator,
@@ -185,8 +192,8 @@ def main():
             context_overlap=args.O,
         ).videos
 
-        video = torch.cat([ref_image_tensor, pose_tensor, video], dim=0)
-        video = scale_video(video, original_width, original_height)
+        video = torch.cat([ref_image_tensor, pose_tensor[:,:,:L], video[:,:,:L]], dim=0) # video 3 x 3 x frame x 768 x 768
+        video = scale_video(video, original_width, original_height)      # video 3 x 3 x frame x 922 x 614
 
         m1 = config.pose_guider_path.split('.')[0].split('/')[-1]
         m2 = config.motion_module_path.split('.')[0].split('/')[-1]
@@ -194,6 +201,14 @@ def main():
         save_dir_name = f"{time_str}-{args.cfg}-{m1}-{m2}"
         save_dir = Path(f"./output/video-{date_str}/{save_dir_name}")
         save_dir.mkdir(exist_ok=True, parents=True)
+
+        result = scale_video(video[:,:,:L], original_width, original_height)
+        save_videos_grid(
+            result,
+            f"{save_dir}/{ref_name}_{pose_name}_{args.cfg}_{args.steps}_{args.skip}.mp4",
+            n_rows=1,
+            fps=src_fps if args.fps is None else args.fps,
+        )    
 
         save_videos_grid(
             video,
