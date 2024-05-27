@@ -38,9 +38,10 @@ Our main contributions could be summarized as follows:
         <video controls autoplay loop src="https://github.com/TMElyralab/MusePose/assets/47803475/7f7a3aaf-2720-4b50-8bca-3257acce4733" muted="false"></video>
     </td>
     <td width=50% style="border: none">
-        <video controls autoplay loop src="https://github.com/TMElyralab/MusePose/assets/47803475/44b31326-8029-4d4f-b46b-0e5b78fa66bf" muted="false"></video>
+        <video controls autoplay loop src="https://github.com/TMElyralab/MusePose/assets/47803475/c56f7e9c-d94d-494e-88e6-62a4a3c1e016" muted="false"></video>
     </td>
 </tr>
+
 
 <tr>
     <td width=50% style="border: none">
@@ -56,7 +57,7 @@ Our main contributions could be summarized as follows:
         <video controls autoplay loop src="https://github.com/TMElyralab/MusePose/assets/47803475/2bbebf98-6805-4f1b-b769-537f69cc0e4b" muted="false"></video>
     </td>
     <td width=50% style="border: none">
-        <video controls autoplay loop src="https://github.com/TMElyralab/MusePose/assets/47803475/866d54b0-bad3-413b-9982-3518fd6c5de8" muted="false"></video>
+        <video controls autoplay loop src="https://github.com/TMElyralab/MusePose/assets/47803475/1b2b97d0-0ae9-49a6-83ba-b3024ae64f08" muted="false"></video>
     </td>
 </tr>
 
