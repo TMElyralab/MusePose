@@ -1,6 +1,8 @@
 # MusePose
 
-MusePose: a Pose-Driven Image-to-Video Framework for Virtual Human Generation. Zhengyan Tong,
+MusePose: a Pose-Driven Image-to-Video Framework for Virtual Human Generation. 
+
+Zhengyan Tong,
 Chao Li,
 Zhaokang Chen,
 Bin Wu<sup>†</sup>,
