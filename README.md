@@ -127,8 +127,9 @@ Finally, these weights should be organized in `pretrained_weights` as follows:
 |   |-- dw-ll_ucoco_384.pth
 |   └── yolox_l_8x8_300e_coco.pth
 |-- sd-image-variations-diffusers
-|   |-- config.json
-|   └── diffusion_pytorch_model.bin
+|   └── unet
+|       |-- config.json
+|       └── diffusion_pytorch_model.bin
 |-- image_encoder
 |   |-- config.json
 |   └── pytorch_model.bin
