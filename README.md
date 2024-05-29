@@ -144,9 +144,9 @@ Finally, these weights should be organized in `pretrained_weights` as follows:
 ## Quickstart
 ### Inference
 #### Preparation
-Prepare your referemce images and dance videos in the folder ```./asserts``` and organnized as the example: 
+Prepare your referemce images and dance videos in the folder ```./assets``` and organnized as the example: 
 ```
-./asserts/
+./assets/
 |-- images
 |   └── ref.png
 └── videos
