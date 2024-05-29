@@ -11,6 +11,7 @@ Wenjiang Zhou
 
 Lyra Lab, Tencent Music Entertainment
 
+
 **[github](https://github.com/TMElyralab/MusePose)**    **[huggingface](https://huggingface.co/TMElyralab/MusePose)**    **space (comming soon)**    **Project (comming soon)**    **Technical report (comming soon)**
 
 [MusePose](https://github.com/TMElyralab/MusePose) is an image-to-video generation framework for virtual human under control signal such as pose. 
