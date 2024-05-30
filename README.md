@@ -176,6 +176,15 @@ python test_stage_2.py --config ./configs/test_stage_2.yaml
 
 Finally, you can see the output results in ```./output/```
 
+##### Reducing VRAM cost
+If you want to reduce the VRAM cost, you could set the width and height for inference. For example,
+```
+python test_stage_2.py --config ./configs/test_stage_2.yaml -W 512 -H 512
+```
+It will generate the video at 512 x 512 first, and then resize it back to the original size of the pose video.
+
+Currently, it takes 16GB VRAM to run on 512 x 512 x 48 and takes 28GB VRAM to run on 768 x 768 x 48. However, it should be noticed that the inference resolution would affect the final results.
+
 #### Face Enhancement
 
 If you want to enhance the face region to have a better consistency of the face, you could use [FaceFusion](https://github.com/facefusion/facefusion). You could use the `face-swap` function to swap the face in the reference image to the generated video.
