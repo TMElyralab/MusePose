@@ -36,4 +36,3 @@ for url, path in tqdm(zip(config_urls, config_paths)):
 
 # renaming model name as given in readme
 os.rename('pretrained_weights/dwpose/yolox_l_8x8_300e_coco_20211126_140236-d3bd2b23.pth', 'pretrained_weights/dwpose/yolox_l_8x8_300e_coco.pth')
-os.rename('yolox_l_8x8_300e_coco_20211126_140236-d3bd2b23.pth', 'yolox_l_8x8_300e_coco.pth')
