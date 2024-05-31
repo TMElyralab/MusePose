@@ -24,8 +24,6 @@ for path in paths:
 for url, path in tqdm(zip(urls, paths)):
     filename = wget.download(url, f'pretrained_weights/{path}')
 
-# saving config files
-
 config_urls = ['https://huggingface.co/lambdalabs/sd-image-variations-diffusers/resolve/main/unet/config.json',
            'https://huggingface.co/lambdalabs/sd-image-variations-diffusers/resolve/main/image_encoder/config.json',
            'https://huggingface.co/stabilityai/sd-vae-ft-mse/resolve/main/config.json']
@@ -35,3 +33,7 @@ config_paths = ['sd-image-variations-diffusers/unet', 'image_encoder', 'sd-vae-f
 # saving config files 
 for url, path in tqdm(zip(config_urls, config_paths)):
     filename = wget.download(url, f'pretrained_weights/{path}')
+
+# renaming model name as given in readme
+os.rename('pretrained_weights/dwpose/yolox_l_8x8_300e_coco_20211126_140236-d3bd2b23.pth', 'pretrained_weights/dwpose/yolox_l_8x8_300e_coco.pth')
+os.rename('yolox_l_8x8_300e_coco_20211126_140236-d3bd2b23.pth', 'yolox_l_8x8_300e_coco.pth')
