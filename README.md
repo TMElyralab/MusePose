@@ -20,6 +20,9 @@ Lyra Lab, Tencent Music Entertainment
 
 We really appreciate [AnimateAnyone](https://github.com/HumanAIGC/AnimateAnyone) for their academic paper and [Moore-AnimateAnyone](https://github.com/MooreThreads/Moore-AnimateAnyone) for their code base, which have significantly expedited the development of the AIGC community and [MusePose](https://github.com/TMElyralab/MusePose).
 
+Update:
+1. 🔥We support [Comfyui-MusePose](https://github.com/TMElyralab/Comfyui-MusePose) now!
+
 ## Overview
 [MusePose](https://github.com/TMElyralab/MusePose) is a diffusion-based and pose-guided virtual human video generation framework.  
 Our main contributions could be summarized as follows:
@@ -72,11 +75,12 @@ Our main contributions could be summarized as follows:
 
 ## News
 - [05/27/2024] Release `MusePose` and pretrained models.
-
+- [05/31/2024] Release [Comfyui-MusePose](https://github.com/TMElyralab/Comfyui-MusePose)
 
 ## Todo:
 - [x] release our trained models and inference codes of MusePose.
 - [x] release pose align algorithm.
+- [x] Comfyui-MusePose
 - [ ] training guidelines.
 - [ ] Huggingface Gradio demo.
 - [ ] a improved architecture and model (may take longer).
