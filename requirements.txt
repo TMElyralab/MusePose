@@ -22,3 +22,4 @@ transformers==4.33.1
 mlflow==2.9.2
 xformers==0.0.22
 moviepy==1.0.3
+wget==3.2
