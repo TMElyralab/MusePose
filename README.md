@@ -187,7 +187,7 @@ python test_stage_2.py --config ./configs/test_stage_2.yaml -W 512 -H 512
 ```
 It will generate the video at 512 x 512 first, and then resize it back to the original size of the pose video.
 
-Currently, it takes 16GB VRAM to run on 512 x 512 x 48 and takes 28GB VRAM to run on 768 x 768 x 48. However, it should be noticed that the inference resolution would affect the final results.
+Currently, it takes 16GB VRAM to run on 512 x 512 x 48 and takes 28GB VRAM to run on 768 x 768 x 48. However, it should be noticed that the inference resolution would affect the final results (especially face region).
 
 #### Face Enhancement
 
