@@ -127,7 +127,6 @@ def main():
         scheduler=scheduler,
     )
     pipe = pipe.to("cuda", dtype=weight_dtype)
-    pipe = pipe.to("cuda", dtype=weight_dtype)
 
     date_str = datetime.now().strftime("%Y%m%d")
     time_str = datetime.now().strftime("%H%M")
