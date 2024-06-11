@@ -63,7 +63,19 @@ def scale_video(video,width,height):
     return scaled_video
 
 
-def run_video_generation(config_path, width, height, length, slice_num, overlap, cfg, seed, steps, fps, skip):
+def run_video_generation(
+    config_path="./configs/test_stage_2.yaml", 
+    width=768,
+    height=768,
+    length=300,
+    slice_num=48,
+    overlap=4, 
+    cfg=3.5,
+    seed=99,
+    steps=20,
+    fps=None,
+    skip=1
+):
     config = OmegaConf.load(config_path)
 
     if config.weight_dtype == "fp16":
