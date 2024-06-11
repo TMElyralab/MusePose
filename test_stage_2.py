@@ -201,7 +201,7 @@ def run_video_generation(config_path, width, height, length, slice_num, overlap,
         output_path1 = f"{save_dir}/{ref_name}_{pose_name}_{args.cfg}_{args.steps}_{args.skip}.mp4"
         save_videos_grid(
             result,
-            output_path2,
+            output_path1,
             n_rows=1,
             fps=src_fps if args.fps is None else args.fps,
         )    
