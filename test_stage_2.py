@@ -208,10 +208,10 @@ def run_video_generation(config_path, width, height, length, slice_num, overlap,
 
         video = torch.cat([ref_image_tensor, pose_tensor[:,:,:L], video[:,:,:L]], dim=0) 
         video = scale_video(video, original_width, original_height)     
-        output_path = f"{save_dir}/{ref_name}_{pose_name}_{args.cfg}_{args.steps}_{args.skip}_{m1}_{m2}.mp4"
+        output_path2 = f"{save_dir}/{ref_name}_{pose_name}_{args.cfg}_{args.steps}_{args.skip}_{m1}_{m2}.mp4"
         save_videos_grid(
             video,
-            output_path,
+            output_path2,
             n_rows=3,
             fps=src_fps if args.fps is None else args.fps,
         )
