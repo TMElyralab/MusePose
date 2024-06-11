@@ -63,10 +63,8 @@ def scale_video(video,width,height):
     return scaled_video
 
 
-def main():
-    args = parse_args()
-
-    config = OmegaConf.load(args.config)
+def run_video_generation(config_path, width, height, length, slice_num, overlap, cfg, seed, steps, fps, skip):
+    config = OmegaConf.load(config_path)
 
     if config.weight_dtype == "fp16":
         weight_dtype = torch.float16
@@ -200,21 +198,25 @@ def main():
         save_dir.mkdir(exist_ok=True, parents=True)
 
         result = scale_video(video[:,:,:L], original_width, original_height)
+        output_path1 = f"{save_dir}/{ref_name}_{pose_name}_{args.cfg}_{args.steps}_{args.skip}.mp4"
         save_videos_grid(
             result,
-            f"{save_dir}/{ref_name}_{pose_name}_{args.cfg}_{args.steps}_{args.skip}.mp4",
+            output_path2,
             n_rows=1,
             fps=src_fps if args.fps is None else args.fps,
         )    
 
         video = torch.cat([ref_image_tensor, pose_tensor[:,:,:L], video[:,:,:L]], dim=0) 
         video = scale_video(video, original_width, original_height)     
+        output_path = f"{save_dir}/{ref_name}_{pose_name}_{args.cfg}_{args.steps}_{args.skip}_{m1}_{m2}.mp4"
         save_videos_grid(
             video,
-            f"{save_dir}/{ref_name}_{pose_name}_{args.cfg}_{args.steps}_{args.skip}_{m1}_{m2}.mp4",
+            output_path,
             n_rows=3,
             fps=src_fps if args.fps is None else args.fps,
         )
+        
+        return { "output_path1": output_path1, "output_path2": output_path2 }
 
     for ref_image_path_dir in config["test_cases"].keys():
         if os.path.isdir(ref_image_path_dir):
@@ -228,10 +230,15 @@ def main():
                 else:
                     pose_video_paths = [pose_video_path_dir]
                 for pose_video_path in pose_video_paths:
-                    handle_single(ref_image_path, pose_video_path) 
+                    video_paths = handle_single(ref_image_path, pose_video_path)
+                    all_video_paths.extend(video_paths)
 
-
+    return all_video_paths
 
 
 if __name__ == "__main__":
-    main()
+    args = parse_args()
+    video_paths = run_video_generation(
+        args.config, args.W, args.H, args.L, args.S, args.O, args.cfg, args.seed, args.steps, args.fps, args.skip
+    )
+    print(json.dumps(video_paths))
