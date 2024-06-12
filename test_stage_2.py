@@ -233,6 +233,8 @@ def run_video_generation(
         # return { "output_path1": output_path1, "output_path2": output_path2 }
         return { "output_path": output_path1 }
 
+    all_video_paths = []
+
     for ref_image_path_dir in config["test_cases"].keys():
         if os.path.isdir(ref_image_path_dir):
             ref_image_paths = glob.glob(os.path.join(ref_image_path_dir, '*.jpg'))
