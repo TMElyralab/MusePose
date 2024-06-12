@@ -216,33 +216,22 @@ def run_video_generation(
             fps=src_fps if fps is None else fps,
         )
 
-        print("ref_image_tensor size:", ref_image_tensor.size())
-        print("pose_tensor size:", pose_tensor[:, :, :L].size())
-        print("video size:", video[:, :, :L].size())
+        # print("ref_image_tensor size:", ref_image_tensor.size())
+        # print("pose_tensor size:", pose_tensor[:, :, :L].size())
+        # print("video size:", video[:, :, :L].size())
 
-        # Ensure all tensors are the same size
-        ref_image_tensor = F.interpolate(ref_image_tensor, size=(original_height, original_width), mode='bilinear', align_corners=False)
-        pose_tensor = F.interpolate(pose_tensor[:, :, :L], size=(original_height, original_width), mode='bilinear', align_corners=False)
-        video = F.interpolate(video[:, :, :L], size=(original_height, original_width), mode='bilinear', align_corners=False)
-    
-        # Print sizes for debugging
-        print("Adjusted ref_image_tensor size:", ref_image_tensor.size())
-        print("Adjusted pose_tensor size:", pose_tensor.size())
-        print("Adjusted video size:", video.size())
-    
-        # Concatenate the tensors
-        video = torch.cat([ref_image_tensor, pose_tensor, video], dim=0)        
         # video = torch.cat([ref_image_tensor, pose_tensor[:,:,:L], video[:,:,:L]], dim=0) 
-        video = scale_video(video, original_width, original_height)     
-        output_path2 = f"{save_dir}/{ref_name}_{pose_name}_{cfg}_{steps}_{skip}_{m1}_{m2}.mp4"
-        save_videos_grid(
-            video,
-            output_path2,
-            n_rows=3,
-            fps=src_fps if fps is None else fps,
-        )
+        # video = scale_video(video, original_width, original_height)     
+        # output_path2 = f"{save_dir}/{ref_name}_{pose_name}_{cfg}_{steps}_{skip}_{m1}_{m2}.mp4"
+        # save_videos_grid(
+        #     video,
+        #     output_path2,
+        #     n_rows=3,
+        #     fps=src_fps if fps is None else fps,
+        # )
         
-        return { "output_path1": output_path1, "output_path2": output_path2 }
+        # return { "output_path1": output_path1, "output_path2": output_path2 }
+        return { "output_path": output_path }
 
     for ref_image_path_dir in config["test_cases"].keys():
         if os.path.isdir(ref_image_path_dir):
