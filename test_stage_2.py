@@ -40,7 +40,8 @@ def parse_args():
     parser.add_argument("--steps", type=int,   default=20, help="DDIM sampling steps")
     parser.add_argument("--fps",   type=int)
     
-    parser.add_argument("--skip",  type=int,   default=1, help="frame sample rate = (skip+1)") 
+    parser.add_argument("--skip",    type=int, default=1, help="frame sample rate = (skip+1)") 
+    parser.add_argument("--compare", type=int, default=1, help="render a side by side comparison of reference, pose, and result") 
     args = parser.parse_args()
 
     print('Width:', args.W)
@@ -75,6 +76,7 @@ def run_video_generation(
     steps=20,
     fps=None,
     skip=1
+    compare=1
 ):
     config = OmegaConf.load(config_path)
 
@@ -216,6 +218,9 @@ def run_video_generation(
             fps=src_fps if fps is None else fps,
         )
 
+        if not compare:
+            return [output_path1]
+
         video = torch.cat([ref_image_tensor, pose_tensor[:,:,:L], video[:,:,:L]], dim=0) 
         video = scale_video(video, original_width, original_height)     
         output_path2 = f"{save_dir}/{ref_name}_{pose_name}_{cfg}_{steps}_{skip}_{m1}_{m2}.mp4"
@@ -227,7 +232,6 @@ def run_video_generation(
         )
         
         return [output_path1, output_path2]
-        # return output_path1
 
     all_video_paths = []
 
@@ -244,7 +248,6 @@ def run_video_generation(
                     pose_video_paths = [pose_video_path_dir]
                 for pose_video_path in pose_video_paths:
                     video_path = handle_single(ref_image_path, pose_video_path)
-                    # all_video_paths.append(video_path)
                     all_video_paths.extend(video_path)
 
     return all_video_paths
@@ -253,6 +256,6 @@ def run_video_generation(
 if __name__ == "__main__":
     args = parse_args()
     video_paths = run_video_generation(
-        args.config, args.W, args.H, args.L, args.S, args.O, args.cfg, args.seed, args.steps, args.fps, args.skip
+        args.config, args.W, args.H, args.L, args.S, args.O, args.cfg, args.seed, args.steps, args.fps, args.skip, args.compare
     )
     print(json.dumps(video_paths))
