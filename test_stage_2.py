@@ -248,7 +248,7 @@ def run_video_generation(
                     pose_video_paths = [pose_video_path_dir]
                 for pose_video_path in pose_video_paths:
                     video_path = handle_single(ref_image_path, pose_video_path)
-                    all_video_paths.extend(video_path)
+                    all_video_paths.append(video_path)
 
     return all_video_paths
 
