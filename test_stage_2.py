@@ -231,7 +231,7 @@ def run_video_generation(
         # )
         
         # return { "output_path1": output_path1, "output_path2": output_path2 }
-        return { "output_path": output_path }
+        return { "output_path": output_path1 }
 
     for ref_image_path_dir in config["test_cases"].keys():
         if os.path.isdir(ref_image_path_dir):
