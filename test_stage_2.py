@@ -231,7 +231,7 @@ def run_video_generation(
         # )
         
         # return { "output_path1": output_path1, "output_path2": output_path2 }
-        return { "output_path": output_path1 }
+        return output_path1
 
     all_video_paths = []
 
@@ -247,8 +247,8 @@ def run_video_generation(
                 else:
                     pose_video_paths = [pose_video_path_dir]
                 for pose_video_path in pose_video_paths:
-                    video_paths = handle_single(ref_image_path, pose_video_path)
-                    all_video_paths.extend(video_paths)
+                    video_path = handle_single(ref_image_path, pose_video_path)
+                    all_video_paths.extend(video_path)
 
     return all_video_paths
 
