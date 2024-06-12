@@ -216,22 +216,18 @@ def run_video_generation(
             fps=src_fps if fps is None else fps,
         )
 
-        # print("ref_image_tensor size:", ref_image_tensor.size())
-        # print("pose_tensor size:", pose_tensor[:, :, :L].size())
-        # print("video size:", video[:, :, :L].size())
-
-        # video = torch.cat([ref_image_tensor, pose_tensor[:,:,:L], video[:,:,:L]], dim=0) 
-        # video = scale_video(video, original_width, original_height)     
-        # output_path2 = f"{save_dir}/{ref_name}_{pose_name}_{cfg}_{steps}_{skip}_{m1}_{m2}.mp4"
-        # save_videos_grid(
-        #     video,
-        #     output_path2,
-        #     n_rows=3,
-        #     fps=src_fps if fps is None else fps,
-        # )
+        video = torch.cat([ref_image_tensor, pose_tensor[:,:,:L], video[:,:,:L]], dim=0) 
+        video = scale_video(video, original_width, original_height)     
+        output_path2 = f"{save_dir}/{ref_name}_{pose_name}_{cfg}_{steps}_{skip}_{m1}_{m2}.mp4"
+        save_videos_grid(
+            video,
+            output_path2,
+            n_rows=3,
+            fps=src_fps if fps is None else fps,
+        )
         
-        # return { "output_path1": output_path1, "output_path2": output_path2 }
-        return output_path1
+        return [output_path1, output_path2]
+        # return output_path1
 
     all_video_paths = []
 
@@ -248,7 +244,8 @@ def run_video_generation(
                     pose_video_paths = [pose_video_path_dir]
                 for pose_video_path in pose_video_paths:
                     video_path = handle_single(ref_image_path, pose_video_path)
-                    all_video_paths.append(video_path)
+                    # all_video_paths.append(video_path)
+                    all_video_paths.extend(video_path)
 
     return all_video_paths
 
