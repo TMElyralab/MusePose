@@ -170,8 +170,8 @@ def run_video_generation(
             pose_image_pil = pose_image_pil.resize((width,height))
 
         # repeart the last segment
-        last_segment_frame_num =  (L - slice) % (slice - overlap) 
-        repeart_frame_num = (slice - overlap - last_segment_frame_num) % (slice - overlap) 
+        last_segment_frame_num =  (L - slice_num) % (slice_num - overlap) 
+        repeart_frame_num = (slice_num - overlap - last_segment_frame_num) % (slice_num - overlap) 
         for i in range(repeart_frame_num):
             pose_list.append(pose_list[-1])
             pose_tensor_list.append(pose_tensor_list[-1])
@@ -194,7 +194,7 @@ def run_video_generation(
             steps,
             cfg,
             generator=generator,
-            context_frames=slice,
+            context_frames=slice_num,
             context_stride=1,
             context_overlap=overlap,
         ).videos
