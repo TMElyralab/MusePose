@@ -76,6 +76,8 @@ Our main contributions could be summarized as follows:
 ## News
 - [05/27/2024] Release `MusePose` and pretrained models.
 - [05/31/2024] Support [Comfyui-MusePose](https://github.com/TMElyralab/Comfyui-MusePose)
+- [06/14/2024] Bug Fixed in `inference_v2.yaml`.
+
 
 ## Todo:
 - [x] release our trained models and inference codes of MusePose.
