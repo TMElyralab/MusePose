@@ -75,7 +75,7 @@ def run_video_generation(
     seed=99,
     steps=20,
     fps=None,
-    skip=1
+    skip=1,
     compare=1
 ):
     config = OmegaConf.load(config_path)
