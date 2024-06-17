@@ -1,11 +1,6 @@
 import resource
 
-soft_limit, hard_limit = resource.getrlimit(resource.RLIMIT_NOFILE)
-
-new_soft_limit = min(soft_limit, hard_limit)
-new_hard_limit = hard_limit
-
-resource.setrlimit(resource.RLIMIT_NOFILE, (new_soft_limit, new_hard_limit))
+resource.setrlimit(resource.RLIMIT_NOFILE, (4096, 4096))
 
 import numpy as np
 import argparse
