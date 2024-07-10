@@ -23,6 +23,15 @@ We really appreciate [AnimateAnyone](https://github.com/HumanAIGC/AnimateAnyone)
 Update:
 1. We support [Comfyui-MusePose](https://github.com/TMElyralab/Comfyui-MusePose) now!
 
+## Recruitment
+Join Lyra Lab, Tencent Music Entertainment!
+
+We are currently seeking AIGC researchers including Internships, New Grads, and Senior (实习、校招、社招).
+
+Please find details in the following two links or contact zkangchen@tencent.com
+
+- AI Researcher (https://join.tencentmusic.com/social/post-details/?id=13488, https://join.tencentmusic.com/social/post-details/?id=13502)
+  
 ## Overview
 [MusePose](https://github.com/TMElyralab/MusePose) is a diffusion-based and pose-guided virtual human video generation framework.  
 Our main contributions could be summarized as follows:
