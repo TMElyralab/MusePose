@@ -105,19 +105,10 @@ To prepare the Python environment and install additional packages such as opencv
 
 ### Build environment
 
-We recommend a python version >=3.10 and cuda version =11.7. Then build environment as follows:
+We recommend a python version >=3.10 and cuda version==12.1. Then build environment as follows:
 
 ```shell
 pip install -r requirements.txt
-```
-
-### mmlab packages
-```bash
-pip install --no-cache-dir -U openmim 
-mim install mmengine 
-mim install "mmcv>=2.0.1" 
-mim install "mmdet>=3.1.0" 
-mim install "mmpose>=1.1.0" 
 ```
 
 
