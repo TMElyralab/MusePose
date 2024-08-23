@@ -107,20 +107,21 @@ To prepare the Python environment and install additional packages such as opencv
 
 We recommend a python version >=3.10 and cuda version =11.7. Then build environment as follows:
 
-```shell
-pip install -r requirements.txt
-```
-
-### mmlab packages
+### install step
 ```bash
+conda create -n musepose  python=3.10 cudatoolkit=11.7 -y -c nvidia
+conda activate musepose
+git clone https://github.com/TMElyralab/MusePose 
+cd MusePose/
+#if u use proxy,use --proxy
+pip install --proxy=http://127.0.0.1:7890 --index-url https://pypi.org/simple -r requirements.txt 
 pip install --no-cache-dir -U openmim 
+##mmlab packages
 mim install mmengine 
-mim install "mmcv>=2.0.1" 
-mim install "mmdet>=3.1.0" 
+mim install "mmcv>=2.0.1,<2.2.0" 
+mim install "mmdet>=3.1.0,<3.3.0"
 mim install "mmpose>=1.1.0" 
 ```
-
-
 ### Download weights
 You can download weights manually as follows:
 
