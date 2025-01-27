@@ -122,7 +122,12 @@ mim install "mmpose>=1.1.0"
 
 
 ### Download weights
-You can download weights manually as follows:
+You can download weights automatically (in the desired directory structure) by running this command:
+
+```shell
+downloading_weights.py
+```
+or you can download weights manually as follows:
 
 1. Download our trained [weights](https://huggingface.co/TMElyralab/MusePose).
 
