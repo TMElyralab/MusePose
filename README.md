@@ -125,7 +125,7 @@ mim install "mmpose>=1.1.0"
 You can download weights automatically (in the desired directory structure) by running this command:
 
 ```shell
-downloading_weights.py
+python3 downloading_weights.py
 ```
 or you can download weights manually as follows:
 
