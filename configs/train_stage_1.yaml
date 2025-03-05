@@ -1,0 +1,69 @@
+data:
+  train_bs: 8
+  train_width: 768 
+  train_height: 768 
+  meta_paths:
+    - "./meta/xxx.json"
+  # Margin of frame indexes between ref and tgt images
+  sample_margin: 128  
+
+solver:
+  gradient_accumulation_steps: 1
+  mixed_precision: 'fp16'
+  enable_xformers_memory_efficient_attention: True 
+  gradient_checkpointing: False 
+  max_train_steps: 400000
+  max_grad_norm: 1.0
+  # lr
+  learning_rate: 1.0e-5
+  scale_lr: False 
+  lr_warmup_steps: 1
+  lr_scheduler: 'constant'
+
+  # optimizer
+  use_8bit_adam: False 
+  adam_beta1: 0.9
+  adam_beta2: 0.999
+  adam_weight_decay:  1.0e-2
+  adam_epsilon: 1.0e-8
+
+val:
+  validation_steps: 20000000000000000
+
+
+noise_scheduler_kwargs:
+  num_train_timesteps: 1000
+  beta_start:          0.00085
+  beta_end:            0.012
+  beta_schedule:       "scaled_linear"
+  steps_offset:        1
+  clip_sample:         false
+
+base_model_path: './pretrained_weights/sd-image-variations-diffusers'
+vae_model_path: './pretrained_weights/sd-vae-ft-mse'
+image_encoder_path: './pretrained_weights/sd-image-variations-diffusers/image_encoder'
+controlnet_openpose_path: './pretrained_weights/control_v11p_sd15_openpose/diffusion_pytorch_model.bin'
+
+weight_dtype: 'fp16'  # [fp16, fp32]
+uncond_ratio: 0.1
+noise_offset: 0.05
+snr_gamma: 5.0
+# snr_gamma: 0
+enable_zero_snr: True 
+pose_guider_pretrain: True 
+
+seed: 12580
+resume_from_checkpoint: ''
+checkpointing_steps: 2250000000000000000000
+save_model_epoch_interval: 25
+exp_name: 'stage_1'
+output_dir: './exp_output'
+
+# load pretrained weights 
+load_pth: True
+denoising_unet_path: "denoising_unet.pth"
+reference_unet_path: "reference_unet.pth"
+pose_guider_path:    "pose_guider.pth"
+
+
+
