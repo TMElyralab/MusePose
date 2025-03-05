@@ -1,3 +1,7 @@
+import resource
+
+resource.setrlimit(resource.RLIMIT_NOFILE, (4096, 4096))
+
 import numpy as np
 import argparse
 import torch
