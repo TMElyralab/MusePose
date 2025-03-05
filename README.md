@@ -21,17 +21,8 @@ Lyra Lab, Tencent Music Entertainment
 We really appreciate [AnimateAnyone](https://github.com/HumanAIGC/AnimateAnyone) for their academic paper and [Moore-AnimateAnyone](https://github.com/MooreThreads/Moore-AnimateAnyone) for their code base, which have significantly expedited the development of the AIGC community and [MusePose](https://github.com/TMElyralab/MusePose).
 
 Update:
-1. We support [Comfyui-MusePose](https://github.com/TMElyralab/Comfyui-MusePose) now!
+1. We release train codes of MusePose now!
 
-## Recruitment
-Join Lyra Lab, Tencent Music Entertainment!
-
-We are currently seeking AIGC researchers including Internships, New Grads, and Senior (实习、校招、社招).
-
-Please find details in the following two links or contact zkangchen@tencent.com
-
-- AI Researcher (https://join.tencentmusic.com/social/post-details/?id=13488, https://join.tencentmusic.com/social/post-details/?id=13502)
-  
 ## Overview
 [MusePose](https://github.com/TMElyralab/MusePose) is a diffusion-based and pose-guided virtual human video generation framework.  
 Our main contributions could be summarized as follows:
@@ -86,13 +77,13 @@ Our main contributions could be summarized as follows:
 - [05/27/2024] Release `MusePose` and pretrained models.
 - [05/31/2024] Support [Comfyui-MusePose](https://github.com/TMElyralab/Comfyui-MusePose)
 - [06/14/2024] Bug Fixed in `inference_v2.yaml`.
-
+- [03/04/2025] Release train codes.
 
 ## Todo:
 - [x] release our trained models and inference codes of MusePose.
 - [x] release pose align algorithm.
 - [x] Comfyui-MusePose
-- [ ] training guidelines.
+- [x] training guidelines.
 - [ ] Huggingface Gradio demo.
 - [ ] a improved architecture and model (may take longer).
 
@@ -132,6 +123,8 @@ You can download weights manually as follows:
    - [dwpose](https://huggingface.co/yzd-v/DWPose/tree/main)
    - [yolox](https://download.openmmlab.com/mmdetection/v2.0/yolox/yolox_l_8x8_300e_coco/yolox_l_8x8_300e_coco_20211126_140236-d3bd2b23.pth) - Make sure to rename to `yolox_l_8x8_300e_coco.pth`
    - [image_encoder](https://huggingface.co/lambdalabs/sd-image-variations-diffusers/tree/main/image_encoder)
+   - [control_v11p_sd15_openpose](https://huggingface.co/lllyasviel/control_v11p_sd15_openpose/blob/main/diffusion_pytorch_model.bin) (for training only)
+   - [animatediff](https://huggingface.co/guoyww/animatediff/blob/main/mm_sd_v15_v2.ckpt) (for training only)
 
 Finally, these weights should be organized in `pretrained_weights` as follows:
 ```
@@ -151,11 +144,15 @@ Finally, these weights should be organized in `pretrained_weights` as follows:
 |-- image_encoder
 |   |-- config.json
 |   └── pytorch_model.bin
-└── sd-vae-ft-mse
-    |-- config.json
-    └── diffusion_pytorch_model.bin
-
+|-- sd-vae-ft-mse
+|   |-- config.json
+|   └── diffusion_pytorch_model.bin
+|-- control_v11p_sd15_openpose
+|   └── diffusion_pytorch_model.bin
+└── animatediff
+    └── mm_sd_v15_v2.ckpt
 ```
+
 ## Quickstart
 ### Inference
 #### Preparation
@@ -205,6 +202,30 @@ Currently, it takes 16GB VRAM to run on 512 x 512 x 48 and takes 28GB VRAM to ru
 If you want to enhance the face region to have a better consistency of the face, you could use [FaceFusion](https://github.com/facefusion/facefusion). You could use the `face-swap` function to swap the face in the reference image to the generated video.
 
 ### Training
+1. Prepare  
+    First, put all your dance videos in a folder such as `./xxx`  
+    Next, `python extract_dwpose_keypoints.py --video_dir ./xxx`. The extracted dwpose_keypoints will be saved in `./xxx_dwpose_keypoints`.  
+    Then, `python draw_dwpose.py --video_dir ./xxx`. The rendered dwpose videos will be saved in `./xxx_dwpose_without_face` if `draw_face=False`. The rendered dwpose videos will be saved in `./xxx_dwpose` if `draw_face=True`.  
+    Finally, `python extract_meta_info_multiple_dataset.py --video_dirs ./xxx --dataset_name xxx`  
+        You will get a json file to record the path of all data. `./meta/xxx.json` 
+
+2. Config your accelerate and deepspeed  
+    `pip install accelerate`  
+    use cmd `accelerate config` to config your deepspeed according to your machine. 
+    We use zero 2 without any offload and our machine has 8x80GB GPU.
+
+3. Config the yaml file for training  
+    stage 1  
+    `./configs/train_stage_1.yaml` 
+    stage 2    
+    `./configs/train_stage_2.yaml`  
+
+4. Launch Training  
+    stage 1    
+        `accelerate launch train_stage_1_multiGPU.py --config configs/train_stage_1.yaml`  
+    stage 2   
+        `accelerate launch train_stage_2_multiGPU.py --config configs/train_stage_2.yaml`
+
 
 
 
